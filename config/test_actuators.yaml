@@ -1,0 +1,16 @@
+riptide:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100  # Hz
+
+      test_actuators:
+        type: riptide_controllers/RiptideActuatorsTester
+
+
+riptide:
+  test_actuators:
+    ros__parameters:
+      thruster_joint: thruster
+      d_joint: d_fin
+      p_joint: p_fin
+      s_joint: s_fin
