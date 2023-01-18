@@ -35,7 +35,7 @@ def test_actuators(context: LaunchContext):
     controller_manager = Node(
         package="controller_manager",
         executable="ros2_control_node",
-        parameters=[robot_description, robot_controllers],
+        parameters=[robot_description],
         output="both",
         namespace=context.perform_substitution(namespace)
     )
@@ -49,7 +49,7 @@ def test_actuators(context: LaunchContext):
         namespace=context.perform_substitution(namespace)
     )
 
-    return [controller_manager, test_actuators_controller]
+    return [controller_manager]
 
 
 def generate_launch_description():
