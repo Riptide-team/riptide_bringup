@@ -37,7 +37,7 @@ def test_actuators(context: LaunchContext):
         executable="ros2_control_node",
         parameters=[robot_description, robot_controllers],
         output="both",
-        namespace=namespace
+        namespace=context.perform_substitution(namespace)
     )
 
     controller_manager_topic = "/" + context.perform_substitution(namespace) + "/controller_manager"
@@ -46,18 +46,10 @@ def test_actuators(context: LaunchContext):
         package="controller_manager",
         executable="spawner",
         arguments=["test_actuators", "--controller-manager", controller_manager_topic],
-        namespace=namespace
+        namespace=context.perform_substitution(namespace)
     )
 
-    robot_state_publisher = Node(
-        package="robot_state_publisher",
-        executable="robot_state_publisher",
-        output="both",
-        parameters=[robot_description, {"publish_frequency": 100.}],
-        namespace=namespace
-    )
-
-    return [controller_manager, test_actuators_controller, robot_state_publisher]
+    return [controller_manager, test_actuators_controller]
 
 
 def generate_launch_description():
