@@ -15,7 +15,7 @@ def test_actuators(context: LaunchContext):
         [
             FindPackageShare("riptide_description"),
             "urdf",
-            "riptide_actuators.urdf.xacro"
+            "riptide.urdf.xacro"
         ]
     ).perform(context)
 
