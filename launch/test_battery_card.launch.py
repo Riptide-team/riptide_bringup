@@ -42,14 +42,14 @@ def test_actuators(context: LaunchContext):
 
     controller_manager_topic = "/" + context.perform_substitution(namespace) + "/controller_manager"
 
-    test_actuators_controller = Node(
+    test_battery_card_controller = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["test_actuators", "--controller-manager", controller_manager_topic],
+        arguments=["test_battery_card", "--controller-manager", controller_manager_topic],
         namespace=context.perform_substitution(namespace)
     )
 
-    return [controller_manager, test_actuators_controller]
+    return [controller_manager, test_battery_card_controller]
 
 
 def generate_launch_description():
