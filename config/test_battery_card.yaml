@@ -1,0 +1,13 @@
+riptide:
+  controller_manager:
+    ros__parameters:
+      update_rate: 100  # Hz
+
+      test_battery_card:
+        type: riptide_controllers/RiptideBatteryCardTester
+
+
+riptide:
+  test_battery_card:
+    ros__parameters:
+      sensor_name: battery_card
