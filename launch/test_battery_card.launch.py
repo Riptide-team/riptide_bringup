@@ -28,7 +28,7 @@ def test_actuators(context: LaunchContext):
         [
             FindPackageShare("riptide_bringup"),
             "config",
-            "test_nattery_card.yaml",
+            "test_battery_card.yaml",
         ]
     ).perform(context)
 
