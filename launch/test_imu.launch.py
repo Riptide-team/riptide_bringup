@@ -45,7 +45,7 @@ def test_actuators(context: LaunchContext):
     test_imu_controller = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["test_battery_card", "--controller-manager", controller_manager_topic],
+        arguments=["test_imu", "--controller-manager", controller_manager_topic],
         namespace=context.perform_substitution(namespace)
     )
 
