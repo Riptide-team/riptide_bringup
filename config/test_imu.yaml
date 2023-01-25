@@ -1,0 +1,12 @@
+riptide:
+  controller_manager:
+    ros__parameters:
+      update_rate: 25  # Hz
+
+      test_imu:
+        type: riptide_controllers/RiptideIMUTester
+
+riptide:
+  test_imu:
+    ros__parameters:
+      sensor_name: imu
