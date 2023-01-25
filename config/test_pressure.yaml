@@ -1,0 +1,12 @@
+riptide:
+  controller_manager:
+    ros__parameters:
+      update_rate: 25  # Hz
+
+      test_pressure:
+        type: riptide_controllers/RiptidePressureTester
+
+riptide:
+  test_pressure:
+    ros__parameters:
+      sensor_name: pressure
