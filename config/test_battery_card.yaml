@@ -1,7 +1,7 @@
 riptide:
   controller_manager:
     ros__parameters:
-      update_rate: 25  # Hz
+      update_rate: 5  # Hz
 
       test_battery_card:
         type: riptide_controllers/RiptideBatteryCardTester
