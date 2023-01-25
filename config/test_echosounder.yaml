@@ -1,0 +1,12 @@
+riptide:
+  controller_manager:
+    ros__parameters:
+      update_rate: 5  # Hz
+
+      test_echosounder:
+        type: riptide_controllers/RiptideEchosounderTester
+
+riptide:
+  test_echosounder:
+    ros__parameters:
+      sensor_name: echosounder
