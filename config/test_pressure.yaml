@@ -1,7 +1,7 @@
 riptide:
   controller_manager:
     ros__parameters:
-      update_rate: 25  # Hz
+      update_rate: 100  # Hz
 
       test_pressure:
         type: riptide_controllers/RiptidePressureTester
