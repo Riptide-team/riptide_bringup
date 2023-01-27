@@ -28,7 +28,8 @@ def test_actuators(context: LaunchContext):
         [
             FindPackageShare("riptide_bringup"),
             "config",
-            "test_echosounder.yaml",
+            "testers",
+            "test_actuators.yaml",
         ]
     ).perform(context)
 
@@ -42,14 +43,14 @@ def test_actuators(context: LaunchContext):
 
     controller_manager_topic = "/" + context.perform_substitution(namespace) + "/controller_manager"
 
-    test_echosounder_controller = Node(
+    test_actuators_controller = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["test_echosounder", "--controller-manager", controller_manager_topic],
+        arguments=["test_actuators", "--controller-manager", controller_manager_topic],
         namespace=context.perform_substitution(namespace)
     )
 
-    return [controller_manager, test_echosounder_controller]
+    return [controller_manager, test_actuators_controller]
 
 
 def generate_launch_description():
