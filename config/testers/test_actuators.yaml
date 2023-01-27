@@ -4,7 +4,7 @@ riptide:
       update_rate: 25  # Hz
 
       test_actuators:
-        type: riptide_controllers/RiptideActuatorsTester
+        type: riptide_testers/RiptideActuatorsTester
 
 riptide:
   test_actuators:

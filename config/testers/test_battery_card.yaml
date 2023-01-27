@@ -4,7 +4,7 @@ riptide:
       update_rate: 5  # Hz
 
       test_battery_card:
-        type: riptide_controllers/RiptideBatteryCardTester
+        type: riptide_testers/RiptideBatteryCardTester
 
 riptide:
   test_battery_card:

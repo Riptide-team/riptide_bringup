@@ -4,7 +4,7 @@ riptide:
       update_rate: 25  # Hz
 
       test_imu:
-        type: riptide_controllers/RiptideIMUTester
+        type: riptide_testers/RiptideIMUTester
 
 riptide:
   test_imu:

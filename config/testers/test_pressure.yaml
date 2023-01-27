@@ -4,7 +4,7 @@ riptide:
       update_rate: 25  # Hz
 
       test_pressure:
-        type: riptide_controllers/RiptidePressureTester
+        type: riptide_testers/RiptidePressureTester
 
 riptide:
   test_pressure:
