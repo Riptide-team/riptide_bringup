@@ -1,0 +1,9 @@
+riptide_behavior_tree:
+  ros__parameters:
+    loop_timeout: 1000
+    plugins:
+      - nav2_recovery_node_bt_node
+      - nav2_pipeline_sequence_bt_node
+      - is_battery_lower_than
+      - say_something
+      - load_controller

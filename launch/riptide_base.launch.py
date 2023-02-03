@@ -2,7 +2,7 @@ from launch import LaunchDescription, LaunchContext
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, ThisLaunchFileDir, PathJoinSubstitution
+from launch.substitutions import LaunchConfiguration, ThisLaunchFileDir, PathJoinSubstitution, Command, FindExecutable
 from launch_ros.substitutions import FindPackageShare
 from launch_ros.actions import Node
 
