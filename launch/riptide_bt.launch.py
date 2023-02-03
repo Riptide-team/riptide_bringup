@@ -18,7 +18,7 @@ def generate_launch_description():
         [
             FindPackageShare("riptide_behavior_tree"),
             "bt",
-            "test.xml"
+            "one_second.xml"
         ]
     )
 
@@ -75,6 +75,6 @@ def generate_launch_description():
         parameters=[robot_description, robot_controllers],
         output="both",
     )
-    ld.add_action(controller_manager_node)
+    # ld.add_action(controller_manager_node)
 
     return ld
