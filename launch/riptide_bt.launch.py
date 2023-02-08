@@ -44,7 +44,7 @@ def generate_launch_description():
     ld.add_action(behavior_tree)
 
     # Get URDF via xacro
-    prefix = "Riptide_1"
+    prefix = "riptide_1"
     robot_description_content = Command(
         [
             PathJoinSubstitution([FindExecutable(name="xacro")]),
@@ -73,8 +73,19 @@ def generate_launch_description():
         package="controller_manager",
         executable="ros2_control_node",
         parameters=[robot_description, robot_controllers],
+        namespace=prefix,
         output="both",
     )
-    # ld.add_action(controller_manager_node)
+    ld.add_action(controller_manager_node)
+
+    # Pressure Broadcaster
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            namespace=prefix,
+            arguments=["pressure_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager"],
+        )
+    )
 
     return ld
