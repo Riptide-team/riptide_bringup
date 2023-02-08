@@ -1,20 +1,24 @@
-controller_manager:
-  ros__parameters:
-    update_rate: 25  # Hz
+riptide_1:
+  controller_manager:
+    ros__parameters:
+      update_rate: 25  # Hz
 
-    depth_controller:
-      type: riptide_testers/DepthController
+      depth_controller:
+        type: riptide_testers/DepthController
 
-    pressure_broadcaster:
-      type: riptide_broadcasters/PressureBroadcaster
+      pressure_broadcaster:
+        type: riptide_broadcasters/PressureBroadcaster
 
-test_actuators:
-  ros__parameters:
-    thruster_joint: thruster
-    d_joint: d_fin
-    p_joint: p_fin
-    s_joint: s_fin
+riptide_1:
+  depth_controller:
+    ros__parameters:
+      thruster_joint: thruster
+      d_joint: d_fin
+      p_joint: p_fin
+      s_joint: s_fin
+      pressure_name: pressure
 
-pressure_broadcaster:
-  ros__parameters:
-    sensor_name: pressure
+riptide_1:
+  pressure_broadcaster:
+    ros__parameters:
+      sensor_name: pressure
