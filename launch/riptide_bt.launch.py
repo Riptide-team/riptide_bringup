@@ -3,6 +3,8 @@ from launch_ros.actions.node import Node
 from launch.substitutions import PathJoinSubstitution, Command, FindExecutable
 from launch_ros.substitutions import FindPackageShare
 
+from launch.actions import TimerAction
+
 
 import os
 import yaml
@@ -41,7 +43,11 @@ def generate_launch_description():
         parameters=[behavior_tree_config, {'bt_file_path': behavior_tree_xml}],
         output='both'
     )
-    ld.add_action(behavior_tree)
+
+    delayed_bt = TimerAction(period=15.0,
+            actions=[behavior_tree])
+
+    ld.add_action(delayed_bt)
 
     # Get URDF via xacro
     prefix = "riptide_1"
