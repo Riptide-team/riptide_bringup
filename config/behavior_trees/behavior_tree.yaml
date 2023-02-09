@@ -7,5 +7,6 @@ riptide_behavior_tree:
       - is_pressure_greater_than
       - say_something
       - load_controller
+      - unload_controller
       - nav2_single_trigger_bt_node
       - depth_action
