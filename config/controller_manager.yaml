@@ -4,7 +4,7 @@ riptide_1:
       update_rate: 25  # Hz
 
       depth_controller:
-        type: riptide_testers/DepthController
+        type: riptide_controllers/DepthController
 
       pressure_broadcaster:
         type: riptide_broadcasters/PressureBroadcaster
