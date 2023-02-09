@@ -79,24 +79,24 @@ def generate_launch_description():
     ld.add_action(controller_manager_node)
 
     # Pressure Broadcaster
-    ld.add_action(
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            namespace=prefix,
-            arguments=["pressure_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager"],
-        )
-    )
+    # ld.add_action(
+    #     Node(
+    #         package="controller_manager",
+    #         executable="spawner",
+    #         namespace=prefix,
+    #         arguments=["pressure_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager"],
+    #     )
+    # )
 
     # Pressure Broadcaster
-    ld.add_action(
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            namespace=prefix,
-            arguments=["depth_controller", "--controller-manager", "/" + prefix + "/controller_manager"],
-        )
-    )
+    # ld.add_action(
+    #     Node(
+    #         package="controller_manager",
+    #         executable="spawner",
+    #         namespace=prefix,
+    #         arguments=["depth_controller", "--controller-manager", "/" + prefix + "/controller_manager"],
+    #     )
+    # )
 
 
     return ld

@@ -8,3 +8,4 @@ riptide_behavior_tree:
       - say_something
       - load_controller
       - nav2_single_trigger_bt_node
+      - depth_action
