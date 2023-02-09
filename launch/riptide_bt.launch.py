@@ -90,7 +90,7 @@ def generate_launch_description():
             package="controller_manager",
             executable="spawner",
             namespace=prefix,
-            arguments=["pressure_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager"],
+            arguments=["pressure_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
         )
     )
 
@@ -100,7 +100,7 @@ def generate_launch_description():
             package="controller_manager",
             executable="spawner",
             namespace=prefix,
-            arguments=["depth_controller", "--controller-manager", "/" + prefix + "/controller_manager"],
+            arguments=["depth_controller", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
         )
     )
 
