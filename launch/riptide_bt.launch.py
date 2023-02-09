@@ -20,7 +20,7 @@ def generate_launch_description():
         [
             FindPackageShare("riptide_behavior_tree"),
             "bt",
-            "one_second.xml"
+            "1m_1s.xml"
         ]
     )
 
@@ -85,14 +85,14 @@ def generate_launch_description():
     ld.add_action(controller_manager_node)
 
     # Pressure Broadcaster
-    ld.add_action(
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            namespace=prefix,
-            arguments=["pressure_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
-        )
-    )
+    # ld.add_action(
+    #     Node(
+    #         package="controller_manager",
+    #         executable="spawner",
+    #         namespace=prefix,
+    #         arguments=["pressure_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+    #     )
+    # )
 
     # Pressure Broadcaster
     ld.add_action(
