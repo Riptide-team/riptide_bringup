@@ -3,11 +3,14 @@ riptide_1:
     ros__parameters:
       update_rate: 25  # Hz
 
-      depth_controller:
-        type: riptide_controllers/DepthController
-
       pressure_broadcaster:
         type: riptide_broadcasters/PressureBroadcaster
+
+      battery_card_broadcaster:
+        type: riptide_broadcasters/BatteryCardBroadcaster
+
+      depth_controller:
+        type: riptide_controllers/DepthController
 
 riptide_1:
   depth_controller:
@@ -21,3 +24,8 @@ riptide_1:
   pressure_broadcaster:
     ros__parameters:
       sensor_name: pressure
+
+riptide_1:
+  battery_card_broadcaster:
+    ros__parameters:
+      sensor_name: battery_card
