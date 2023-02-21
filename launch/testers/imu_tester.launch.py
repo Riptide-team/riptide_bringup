@@ -13,6 +13,7 @@ def generate_launch_description():
             executable="spawner",
             namespace=prefix,
             arguments=["imu_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+            output="both"
         )
     )
 

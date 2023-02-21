@@ -13,6 +13,7 @@ def generate_launch_description():
             executable="spawner",
             namespace=prefix,
             arguments=["battery_card_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+            output="both"
         )
     )
 
