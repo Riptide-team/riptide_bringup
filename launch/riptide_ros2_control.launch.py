@@ -50,4 +50,14 @@ def generate_launch_description():
     )
     ld.add_action(controller_manager_node)
 
+    # Pressure Broadcaster
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            namespace=prefix,
+            arguments=["pressure_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+        )
+    )
+
     return ld
