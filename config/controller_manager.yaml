@@ -3,6 +3,18 @@ riptide_1:
     ros__parameters:
       update_rate: 25  # Hz
 
+      test_battery_card:
+        type: riptide_testers/RiptideBatteryCardTester
+
+      test_echosounder:
+        type: riptide_testers/RiptideEchosounderTester
+      
+      test_imu:
+        type: riptide_testers/RiptideIMUTester
+
+      test_pressure:
+        type: riptide_testers/RiptidePressureTester
+
       pressure_broadcaster:
         type: riptide_broadcasters/PressureBroadcaster
 
@@ -12,6 +24,9 @@ riptide_1:
       depth_controller:
         type: riptide_controllers/DepthController
 
+      test_actuators:
+        type: riptide_testers/RiptideActuatorsTester
+
 riptide_1:
   depth_controller:
     ros__parameters:
@@ -19,6 +34,34 @@ riptide_1:
       p_joint: p_fin
       s_joint: s_fin
       pressure_name: pressure
+
+riptide:
+  test_actuators:
+    ros__parameters:
+      thruster_joint: thruster
+      d_joint: d_fin
+      p_joint: p_fin
+      s_joint: s_fin
+
+riptide:
+  test_pressure:
+    ros__parameters:
+      sensor_name: pressure
+
+riptide:
+  test_imu:
+    ros__parameters:
+      sensor_name: imu
+
+riptide:
+  test_echosounder:
+    ros__parameters:
+      sensor_name: echosounder
+
+riptide:
+  test_battery_card:
+    ros__parameters:
+      sensor_name: battery_card
 
 riptide_1:
   pressure_broadcaster:
