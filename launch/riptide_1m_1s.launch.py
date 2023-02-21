@@ -10,7 +10,7 @@ def generate_launch_description():
     # Controller manager
     navigation_node = Node(
         package="riptide_navigation",
-        executable="001-1s_1m",
+        executable="001-1s_1m.py",
         namespace=prefix,
         output="both",
     )
