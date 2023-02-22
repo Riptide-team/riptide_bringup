@@ -83,7 +83,6 @@ riptide_1:
 riptide_1:
   imu_broadcaster:
     ros__parameters:
-    
       sensor_name: imu
 
 riptide_1:
