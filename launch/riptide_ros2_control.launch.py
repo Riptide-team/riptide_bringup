@@ -60,4 +60,24 @@ def generate_launch_description():
         )
     )
 
+    # Imu Broadcaster
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            namespace=prefix,
+            arguments=["imu_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+        )
+    )
+
+    # Battery card Broadcaster
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            namespace=prefix,
+            arguments=["battery_card_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+        )
+    )
+
     return ld
