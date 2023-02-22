@@ -80,4 +80,14 @@ def generate_launch_description():
         )
     )
 
+    # Actuators Broadcaster
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            namespace=prefix,
+            arguments=["actuators_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+        )
+    )
+
     return ld
