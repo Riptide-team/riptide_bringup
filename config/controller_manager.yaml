@@ -24,8 +24,8 @@ riptide_1:
       imu_broadcaster:
         type: riptide_broadcasters/ImuBroadcaster
       
-      riptide_broadcaster:
-        type: riptide_broadcasters/RiptideBroadcaster
+      actuators_broadcaster:
+        type: riptide_broadcasters/ActuatorsBroadcaster
 
       actuators_reset:
         type: riptide_controllers/ActuatorsReset
@@ -85,7 +85,6 @@ riptide_1:
 
 riptide_1:
   imu_broadcaster:
-    ros__parameters:
       sensor_name: imu
 
 riptide_1:
