@@ -43,7 +43,7 @@ riptide_1:
       p_joint: p_fin
       s_joint: s_fin
       pressure_name: pressure
-      thruster_velocity: 0.1
+      thruster_velocity: 0.3
 
 riptide_1:
   test_actuators:
