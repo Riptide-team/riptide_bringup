@@ -70,17 +70,7 @@ def generate_launch_description():
         )
     )
 
-    # Battery card Broadcaster
-    ld.add_action(
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            namespace=prefix,
-            arguments=["battery_card_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
-        )
-    )
-
-    # Actuators Broadcaster
+    # Tail Broadcaster
     ld.add_action(
         Node(
             package="controller_manager",
