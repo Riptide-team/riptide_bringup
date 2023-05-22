@@ -44,10 +44,10 @@ riptide_1:
       s_joint: s_fin
       pressure_name: pressure
       imu_name: imu
-      thruster_velocity: 0.3
+      thruster_velocity: 0.40
       K_inf: 0.52
       r: 1.0
-      K_fin: 1.0
+      K_fin: 0.1
 
 riptide_1:
   test_actuators:
