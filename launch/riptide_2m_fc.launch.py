@@ -22,7 +22,7 @@ def generate_launch_description():
             package="controller_manager",
             executable="spawner",
             namespace=prefix,
-            arguments=["full_riptide_controller", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+            arguments=["full_depth_controller", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
         )
     )
 
