@@ -34,7 +34,7 @@ riptide_1:
         type: riptide_controllers/DepthController
 
       full_riptide_controller:
-        type: riptide_controllers/FullDepthController
+        type: riptide_controllers/FullRiptideController
 
       test_actuators:
         type: riptide_testers/RiptideActuatorsTester
