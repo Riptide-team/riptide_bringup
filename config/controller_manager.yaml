@@ -33,7 +33,7 @@ riptide_1:
       depth_controller:
         type: riptide_controllers/DepthController
 
-      full_depth_controller:
+      full_riptide_controller:
         type: riptide_controllers/FullDepthController
 
       test_actuators:
