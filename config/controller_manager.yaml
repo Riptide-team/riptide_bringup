@@ -33,6 +33,9 @@ riptide_1:
       depth_controller:
         type: riptide_controllers/DepthController
 
+      full_depth_controller:
+        type: riptide_controllers/FullDepthController
+
       test_actuators:
         type: riptide_testers/RiptideActuatorsTester
 
@@ -40,6 +43,21 @@ riptide_1:
   depth_controller:
     ros__parameters:
       thruster_joint: thruster
+      p_joint: p_fin
+      s_joint: s_fin
+      pressure_name: pressure
+      imu_name: imu
+      thruster_velocity: 0.05
+      K_inf: 0.52
+      r: 1.0
+      K_fin: 0.4
+      Range_fin: 0.35 # Fin max range in rad (= 20°)
+
+riptide_1:
+  full_riptide_controller:
+    ros__parameters:
+      thruster_joint: thruster
+      d_joint: d_fin
       p_joint: p_fin
       s_joint: s_fin
       pressure_name: pressure
