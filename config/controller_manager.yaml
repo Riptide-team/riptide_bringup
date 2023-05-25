@@ -67,6 +67,7 @@ riptide_1:
       r: 1.0
       K_fin: 0.4
       Range_fin: 0.35 # Fin max range in rad (= 20°)
+      w: [1., 0., 0.]
 
 riptide_1:
   test_actuators:
