@@ -76,7 +76,7 @@ def generate_launch_description():
             package="controller_manager",
             executable="spawner",
             namespace=prefix,
-            arguments=["tail_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+            arguments=["tail_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill", '--ros-args', '--log-level', "debug"],
         )
     )
 
