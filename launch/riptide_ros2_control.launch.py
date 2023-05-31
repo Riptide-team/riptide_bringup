@@ -40,6 +40,17 @@ def generate_launch_description():
         ]
     )
 
+    # Robot state publisher
+    ld.add_action(
+        Node(
+            package='robot_state_publisher',
+            executable='robot_state_publisher',
+            name='robot_state_publisher',
+            output='screen',
+            parameters=[robot_description],
+        )
+    )
+
     # Controller manager
     controller_manager_node = Node(
         package="controller_manager",
