@@ -79,6 +79,15 @@ def generate_launch_description():
         )
     )
 
+    # Imu sensor broadcaster
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=["imu_sensor_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+        )
+    )
+
     # Pressure Broadcaster
     ld.add_action(
         Node(
