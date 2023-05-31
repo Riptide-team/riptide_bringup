@@ -51,7 +51,7 @@ def generate_launch_description():
         )
     )
 
-    # Joint state broadcaster
+    # Joint state publisher
     ld.add_action(
         Node(
             package='joint_state_publisher',
@@ -69,6 +69,15 @@ def generate_launch_description():
         output="both",
     )
     ld.add_action(controller_manager_node)
+
+    # Joint state broadcaster
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=["joint_state_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+        )
+    )
 
     # Pressure Broadcaster
     ld.add_action(

@@ -3,6 +3,9 @@ riptide_1:
     ros__parameters:
       update_rate: 25  # Hz
 
+      joint_state_broadcaster:
+        type: joint_state_broadcaster/JointStateBroadcaster
+
       test_battery_card:
         type: riptide_testers/RiptideBatteryCardTester
 
