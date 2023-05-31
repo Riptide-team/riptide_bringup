@@ -51,6 +51,15 @@ def generate_launch_description():
         )
     )
 
+    # Joint state broadcaster
+    ld.add_action(
+        Node(
+            package='joint_state_publisher',
+            executable='joint_state_publisher',
+            name='joint_state_publisher',
+        )
+    )
+
     # Controller manager
     controller_manager_node = Node(
         package="controller_manager",
