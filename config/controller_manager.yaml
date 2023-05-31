@@ -7,7 +7,7 @@ riptide_1:
         type: joint_state_broadcaster/JointStateBroadcaster
 
       imu_sensor_broadcaster:
-        type: imu_sensor_broadcaster/ImuSensorBroadcaster
+        type: imu_sensor_broadcaster/IMUSensorBroadcaster
 
       test_battery_card:
         type: riptide_testers/RiptideBatteryCardTester
