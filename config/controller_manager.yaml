@@ -36,8 +36,21 @@ riptide_1:
       full_depth_controller:
         type: riptide_controllers/FullDepthController
 
+      riptide_controller:
+        type: riptide_controllers/RiptideController
+
       test_actuators:
         type: riptide_testers/RiptideActuatorsTester
+
+riptide_1:
+  riptide_controller:
+    ros__parameters:
+      thruster_joint: thruster
+      d_joint: d_fin
+      p_joint: p_fin
+      s_joint: s_fin
+      pressure_name: pressure
+      imu_name: imu
 
 riptide_1:
   depth_controller:
@@ -82,7 +95,7 @@ riptide_1:
     ros__parameters:
       sensor_name: pressure
 
-riptide:
+riptide_1:
   test_imu:
     ros__parameters:
       sensor_name: imu
