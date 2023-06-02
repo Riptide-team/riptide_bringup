@@ -9,32 +9,14 @@ riptide_1:
       imu_sensor_broadcaster:
         type: imu_sensor_broadcaster/IMUSensorBroadcaster
 
-      test_battery_card:
-        type: riptide_testers/RiptideBatteryCardTester
-
-      test_echosounder:
-        type: riptide_testers/RiptideEchosounderTester
-      
-      test_imu:
-        type: riptide_testers/RiptideIMUTester
-
-      test_pressure:
-        type: riptide_testers/RiptidePressureTester
-
       pressure_broadcaster:
         type: riptide_broadcasters/PressureBroadcaster
-
-      battery_card_broadcaster:
-        type: riptide_broadcasters/BatteryCardBroadcaster
 
       imu_broadcaster:
         type: riptide_broadcasters/ImuBroadcaster
       
       tail_broadcaster:
         type: riptide_broadcasters/TailBroadcaster
-
-      actuators_reset:
-        type: riptide_controllers/ActuatorsReset
 
       depth_controller:
         type: riptide_controllers/DepthController
@@ -89,42 +71,9 @@ riptide_1:
       w: [1., 0., 0.]
 
 riptide_1:
-  test_actuators:
-    ros__parameters:
-      thruster_joint: thruster
-      d_joint: d_fin
-      p_joint: p_fin
-      s_joint: s_fin
-
-riptide_1:
-  test_pressure:
-    ros__parameters:
-      sensor_name: pressure
-
-riptide_1:
-  test_imu:
-    ros__parameters:
-      sensor_name: imu
-
-riptide_1:
-  test_echosounder:
-    ros__parameters:
-      sensor_name: echosounder
-
-riptide_1:
-  test_battery_card:
-    ros__parameters:
-      sensor_name: battery_card
-
-riptide_1:
   pressure_broadcaster:
     ros__parameters:
       sensor_name: pressure
-
-riptide_1:
-  battery_card_broadcaster:
-    ros__parameters:
-      sensor_name: battery_card
 
 riptide_1:
   imu_broadcaster:
@@ -139,13 +88,6 @@ riptide_1:
       p_joint: p_fin
       s_joint: s_fin
       rc_name: rc
-
-riptide_1:
-  actuators_reset:
-    ros__parameters:
-      thruster_joint: thruster
-      p_joint: p_fin
-      s_joint: s_fin
 
 riptide_1:
   imu_sensor_broadcaster:
