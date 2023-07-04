@@ -130,4 +130,14 @@ def generate_launch_description():
         )
     )
 
+    # Riptide_controller
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            namespace=prefix,
+            arguments=["riptide_controller", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+        )
+    )
+
     return ld
