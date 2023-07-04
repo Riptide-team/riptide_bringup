@@ -92,24 +92,24 @@ def generate_launch_description():
     # )
 
     # Pressure Broadcaster
-    # ld.add_action(
-    #     Node(
-    #         package="controller_manager",
-    #         executable="spawner",
-    #         namespace=prefix,
-    #         arguments=["pressure_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
-    #     )
-    # )
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            namespace=prefix,
+            arguments=["pressure_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+        )
+    )
 
     # Imu Broadcaster
-    # ld.add_action(
-    #     Node(
-    #         package="controller_manager",
-    #         executable="spawner",
-    #         namespace=prefix,
-    #         arguments=["imu_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
-    #     )
-    # )
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            namespace=prefix,
+            arguments=["imu_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+        )
+    )
 
     # Tail Broadcaster
     ld.add_action(
