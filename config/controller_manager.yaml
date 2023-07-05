@@ -39,6 +39,8 @@ riptide_1:
       s_joint: s_fin
       pressure_name: pressure
       imu_name: imu
+      K_fin: .5
+      r_fin: .2
 
 riptide_1:
   depth_controller:
