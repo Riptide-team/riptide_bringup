@@ -3,13 +3,46 @@ from launch_ros.actions.node import Node
 from launch.substitutions import PathJoinSubstitution, Command, FindExecutable
 from launch_ros.substitutions import FindPackageShare
 
-from launch.actions import TimerAction
 
+def broadcasters(ld):
 
-import os
-import yaml
-from ament_index_python.packages import get_package_share_directory
+    # Joint state broadcaster
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=["joint_state_broadcaster", "--unload-on-kill"]
+        )
+    )
 
+    # Imu sensor broadcaster
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=["imu_sensor_broadcaster", "--unload-on-kill"],
+        )
+    )
+
+    # Pressure Broadcaster
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=["pressure_broadcaster", "--unload-on-kill"],
+        )
+    )
+
+    # Tail Broadcaster
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=["tail_broadcaster", "--unload-on-kill"],
+        )
+    )
+
+    return ld
 
 
 def generate_launch_description():
@@ -41,102 +74,70 @@ def generate_launch_description():
     )
 
     # Robot state publisher
-    # ld.add_action(
-    #     Node(
-    #         package='robot_state_publisher',
-    #         executable='robot_state_publisher',
-    #         name='robot_state_publisher',
-    #         output='screen',
-    #         parameters=[robot_description],
-    #     )
-    # )
+    ld.add_action(
+        Node(
+            package='robot_state_publisher',
+            executable='robot_state_publisher',
+            name='robot_state_publisher',
+            output='screen',
+            parameters=[robot_description],
+        )
+    )
 
     # Joint state publisher
-    # ld.add_action(
-    #     Node(
-    #         package='joint_state_publisher',
-    #         executable='joint_state_publisher',
-    #         name='joint_state_publisher',
-    #     )
-    # )
-
-    # Controller manager
-    controller_manager_node = Node(
-        package="controller_manager",
-        executable="ros2_control_node",
-        parameters=[robot_description, robot_controllers],
-        namespace=prefix,
-        # prefix=['xterm -e gdb -ex run --args '], # gdb -ex run --args / valgrind --leak-check=full
-        # arguments=["--ros-args", "--log-level", "debug"],
-        output="both",
-        emulate_tty=True
-    )
-    ld.add_action(controller_manager_node)
-
-    # Joint state broadcaster
     ld.add_action(
         Node(
-            package="controller_manager",
-            executable="spawner",
-            arguments=["joint_state_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+            package='joint_state_publisher',
+            executable='joint_state_publisher',
+            name='joint_state_publisher',
         )
     )
 
-    # Imu sensor broadcaster
-    # ld.add_action(
-    #     Node(
-    #         package="controller_manager",
-    #         executable="spawner",
-    #         arguments=["imu_sensor_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
-    #     )
-    # )
-
-    # Pressure Broadcaster
-    ld.add_action(
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            namespace=prefix,
-            arguments=["pressure_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
-        )
-    )
-
-    # Imu Broadcaster
-    ld.add_action(
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            namespace=prefix,
-            arguments=["imu_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
-        )
-    )
-
-    # Tail Broadcaster
-    ld.add_action(
-        Node(
-            package="controller_manager",
-            executable="spawner",
-            namespace=prefix,
-            arguments=["tail_broadcaster", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
-        )
-    )
-
+    # Echosounder_driver
     ld.add_action(
         Node(
             package="riptide_echosounder",
             executable="riptide_echosounder_driver",
-            namespace=prefix,
             output="both"
         )
     )
 
-    # Riptide_controller
+    # Controller manager
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="ros2_control_node",
+            parameters=[robot_description, robot_controllers],
+            # arguments=["--ros-args", "--log-level", "debug"],
+            output="both",
+            emulate_tty=True
+        )
+    )
+
+    # immersion_controller
     ld.add_action(
         Node(
             package="controller_manager",
             executable="spawner",
-            namespace=prefix,
-            arguments=["riptide_controller", "--controller-manager", "/" + prefix + "/controller_manager", "--unload-on-kill"],
+            arguments=["immersion_controller", "--inactive", "--unload-on-kill"],
+        )
+    )
+    
+    # riptide_controller
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=["riptide_controller", "--inactive", "--unload-on-kill"],
+        )
+    )
+
+    # log_controller
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=["log_controller", "--inactive", "--unload-on-kill"],
         )
     )
 
