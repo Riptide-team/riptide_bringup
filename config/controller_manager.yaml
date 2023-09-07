@@ -22,6 +22,9 @@ controller_manager:
 
     log_controller:
       type: riptide_controllers/LogController
+    
+    depth_controller:
+      type: riptide_controllers/DepthController
 
 
 pressure_broadcaster:
@@ -40,7 +43,6 @@ tail_broadcaster:
 
 imu_sensor_broadcaster:
   ros__parameters:
-    prefix: riptide_1
     frame_id: riptide_1
     sensor_name: riptide_1_imu
 
@@ -75,3 +77,14 @@ immersion_controller:
     phase_2_duration: 1.
     velocity: 1.
     fin_angle: 0.5
+
+depth_controller:
+  ros__parameters:
+    pressure_name: riptide_1_pressure
+    imu_name: riptide_1_imu
+    orientation_reference_joint: log_controller
+    K: 0.52
+    r: 1.
+    yaw: 0.
+    roll: 0.
+    
