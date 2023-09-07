@@ -48,7 +48,7 @@ imu_sensor_broadcaster:
 
 riptide_controller:
   ros__parameters:
-    imu_name: imu_sensor
+    imu_name: imu
     prefix: riptide_1
     thruster_joint: thruster_joint
     d_joint: d_joint
@@ -64,7 +64,7 @@ log_controller:
     angular_velocity_x_joint: riptide_controller/angular_velocity.x
     angular_velocity_y_joint: riptide_controller/angular_velocity.y
     angular_velocity_z_joint: riptide_controller/angular_velocity.z
-    imu_name: imu_sensor
+    imu_name: imu
 
 immersion_controller:
   ros__parameters:
