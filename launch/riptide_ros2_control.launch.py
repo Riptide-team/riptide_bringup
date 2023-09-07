@@ -4,7 +4,7 @@ from launch.substitutions import PathJoinSubstitution, Command, FindExecutable
 from launch_ros.substitutions import FindPackageShare
 
 
-def broadcasters(ld):
+def load_broadcasters(ld):
 
     # Joint state broadcaster
     ld.add_action(
@@ -113,6 +113,8 @@ def generate_launch_description():
             emulate_tty=True
         )
     )
+
+    load_broadcasters(ld)
 
     # immersion_controller
     ld.add_action(
