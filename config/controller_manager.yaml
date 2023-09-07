@@ -87,4 +87,5 @@ depth_controller:
     r: 1.
     yaw: 0.
     roll: 0.
+    velocity: 0.05
     
