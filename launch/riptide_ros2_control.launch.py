@@ -143,4 +143,13 @@ def generate_launch_description():
         )
     )
 
+    # depth_controller
+    ld.add_action(
+        Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=["depth_controller", "--inactive", "--unload-on-kill"],
+        )
+    )
+
     return ld
