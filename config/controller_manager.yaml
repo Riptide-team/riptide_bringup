@@ -26,14 +26,16 @@ controller_manager:
 
 pressure_broadcaster:
   ros__parameters:
+    prefix: riptide_1
     sensor_name: pressure
 
 tail_broadcaster:
   ros__parameters:
-    thruster_joint: thruster
-    d_joint: d_fin
-    p_joint: p_fin
-    s_joint: s_fin
+    prefix: riptide_1
+    thruster_joint: thruster_joint
+    d_joint: d_joint
+    p_joint: p_joint
+    s_joint: s_joint
     rc_name: rc
 
 imu_sensor_broadcaster:
