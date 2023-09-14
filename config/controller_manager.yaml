@@ -75,7 +75,7 @@ immersion_controller:
     s_joint: s_joint
     velocity: 1.
     fin_angle: 0.3
-    phase_1_duration: 1.
+    phase_1_duration: .5
     phase_1_duration: 4.
 
 depth_controller:
