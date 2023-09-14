@@ -76,7 +76,7 @@ immersion_controller:
     velocity: 1.
     fin_angle: 0.3
     phase_1_duration: 1.
-    phase_1_duration: 4.
+    phase_2_duration: 4.
 
 depth_controller:
   ros__parameters:
