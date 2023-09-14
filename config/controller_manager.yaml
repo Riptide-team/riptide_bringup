@@ -73,19 +73,17 @@ immersion_controller:
     d_joint: d_joint
     p_joint: p_joint
     s_joint: s_joint
-    phase_1_duration: 1.
-    phase_2_duration: 1.
     velocity: 1.
-    fin_angle: 0.5
+    fin_angle: 0.3
 
 depth_controller:
   ros__parameters:
     pressure_name: riptide_1_pressure
     imu_name: riptide_1_imu
     orientation_reference_joint: log_controller
-    K: 0.52
+    K: 0.4
     r: 1.
-    yaw: 0.
+    yaw: -1.4
     roll: 0.
     velocity: 0.05
     
