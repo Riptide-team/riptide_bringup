@@ -65,6 +65,8 @@ log_controller:
     angular_velocity_y_joint: riptide_controller/angular_velocity.y
     angular_velocity_z_joint: riptide_controller/angular_velocity.z
     imu_name: imu
+    kp: [.1, .1, .1]
+    kd: [.05, .05, .05]
 
 immersion_controller:
   ros__parameters:
@@ -88,4 +90,3 @@ depth_controller:
     yaw: -1.4
     roll: 0.
     velocity: 0.05
-    
